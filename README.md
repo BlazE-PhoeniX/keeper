@@ -2,7 +2,7 @@
 
 Simple note taking app
 
-> > My first react app
+> My first react app
 
 Inspiration: [udemy course] by angela
 

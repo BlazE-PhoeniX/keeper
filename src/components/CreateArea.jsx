@@ -50,7 +50,7 @@ function CreateArea({ addNote }) {
         />
         {isFocused && (
           <Zoom in={true}>
-            <Fab>
+            <Fab type="submit">
               <AddIcon />
             </Fab>
           </Zoom>

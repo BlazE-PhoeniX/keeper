@@ -14,6 +14,13 @@ function CreateArea({ addNote }) {
     }
   };
 
+  document.querySelector("body").addEventListener("click", event => {
+    const form = event.target.closest(".create-note");
+    console.log("works");
+
+    if (!form) setIsFocused(false);
+  });
+
   const [note, setNote] = React.useState({ title: "", content: "" });
 
   const changeNote = event => {
@@ -25,6 +32,7 @@ function CreateArea({ addNote }) {
     event.preventDefault();
     addNote(note);
     setNote({ title: "", content: "" });
+    setIsFocused(false);
   };
 
   return (
@@ -32,6 +40,7 @@ function CreateArea({ addNote }) {
       <form onSubmit={submitHandler} className="create-note" id="form">
         {isFocused && (
           <input
+            onFocus={setFocus}
             id="noteTitle"
             onChange={changeNote}
             name="title"
